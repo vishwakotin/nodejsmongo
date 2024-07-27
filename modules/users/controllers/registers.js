@@ -30,8 +30,6 @@ const registers = async (req, res) => {
   console.log(hashedpassword);
   console.log(balance);
 
-  console.log("afer user Model");
-
   await userModel.create({
     name: name,
     email: email,
