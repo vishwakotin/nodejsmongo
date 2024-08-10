@@ -3,9 +3,8 @@ const bcrypt = require("bcrypt");
 
 const registers = async (req, res) => {
   console.log("you are in register");
-  console.log(req.body);
 
-  const userModel = mongoose.model("users");
+  console.log(req.body);
 
   const { name, email, password, balance } = req.body;
 
@@ -16,6 +15,8 @@ const registers = async (req, res) => {
     throw "Password length must be more that 5 charecters!";
 
   if (!name) throw "name is required!";
+
+  const userModel = mongoose.model("users");
 
   const Duplicate = await userModel.findOne({
     email: email,
